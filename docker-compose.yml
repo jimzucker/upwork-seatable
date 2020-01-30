@@ -3,6 +3,7 @@ services:
   db:
     image: mariadb:10.1
     container_name: seatable-mysql
+    restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=PASSWORD  # Requested, set the root's password of MySQL service.
       - MYSQL_LOG_CONSOLE=true
@@ -14,12 +15,14 @@ services:
   memcached:
     image: memcached:1.5.6
     container_name: seatable-memcached
+    restart: unless-stopped
     entrypoint: memcached -m 256
     networks:
       - seatable-net
 
   redis:
     image: redis:5.0.7
+    restart: unless-stopped
     container_name: seatable-redis
     networks:
       - seatable-net
@@ -27,6 +30,7 @@ services:
   seatable:
     image: seafileltd/seatable:0.9.3
     container_name: seatable
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
