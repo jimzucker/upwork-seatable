@@ -17,6 +17,11 @@ docker exec -d seatable /shared/seatable/scripts/seatable.sh start
 #### Note: it will hang at the end and you have to kill your terminal
 docker exec -it seatable /shared/seatable/scripts/seatable.sh superuser  
 
-# Modifications to original seatable.io files
+# Notes
+## Modifications to original seatable.io files
 1. changed path for local files form hardcoded /opt/xxx -> $PWD/seatable_home
 2. Created start and stop scritps for convience
+
+## Tickets open with seatable.io
+1. https://github.com/seatable/seatable/issues/4
+
