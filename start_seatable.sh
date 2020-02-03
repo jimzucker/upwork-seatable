@@ -1,14 +1,5 @@
 #!/bin/sh
-STRATDEVOPS_SEATABLE_HOME=`pwd`/seatable_home
-export STRATDEVOPS_SEATABLE_HOME
-
-STRATDEVOPS_SEATABLE_MYSQL=$STRATDEVOPS_SEATABLE_HOME/mysql-data
-export STRATDEVOPS_SEATABLE_MYSQL
-mkdir -p $STRATDEVOPS_SEATABLE_MYSQL
-
-STRATDEVOPS_SEATABLE_DATA=$STRATDEVOPS_SEATABLE_HOME/seatable-data
-export STRATDEVOPS_SEATABLE_DATA
-mkdir -p $STRATDEVOPS_SEATABLE_DATA
-
 docker-compose up -d
+sleep 60
+docker exec -d seatable /shared/seatable/scripts/seatable.sh start
 exit 0
