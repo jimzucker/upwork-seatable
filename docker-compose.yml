@@ -40,7 +40,7 @@ services:
       - DB_HOST=db
       - DB_ROOT_PASSWD=PASSWORD  # Requested, the value shuold be root's password of MySQL service.
       - SEATABLE_SERVER_LETSENCRYPT=False # Default is False.Whether to use let's encrypt certificate.
-      - SEATABLE_SERVER_HOSTNAME=example.seatable.com # Specifies your host name if https is enabled
+      - SEATABLE_SERVER_HOSTNAME=localhost # Specifies your host name if https is enabled
       - TIME_ZONE=Etc/UTC # Optional, default is UTC. Should be uncomment and set to your local time zone.
     depends_on:
       - db
